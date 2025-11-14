@@ -64,7 +64,7 @@ namespace HospitalCRUD
                         command.Parameters.AddWithValue("@bloodGroup", bloodGroup ?? "");
                         
                         int rowsAffected = command.ExecuteNonQuery();
-                        Console.WriteLine($"✅ Patient {firstName} {lastName} added successfully!");
+                        Console.WriteLine($"Patient {firstName} {lastName} added successfully!");
                         return rowsAffected > 0;
                     }
                 }
@@ -710,4 +710,5 @@ namespace HospitalCRUD
             }
         }
     }
+
 }
