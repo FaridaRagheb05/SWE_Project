@@ -58,18 +58,6 @@ CREATE TABLE Users (
     CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Appointment
-CREATE TABLE Appointments (
-    AppointmentID INT PRIMARY KEY AUTO_INCREMENT,
-    PatientID INT NOT NULL,
-    DoctorID INT NOT NULL,
-    AppointmentDate DATETIME NOT NULL,
-    Status ENUM('Scheduled', 'Completed', 'Cancelled') DEFAULT 'Scheduled',
-    Reason TEXT,
-    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (PatientID) REFERENCES Patients(PatientID),
-    FOREIGN KEY (DoctorID) REFERENCES Doctors(DoctorID)
-);
 
 -- MedicalRecords
 CREATE TABLE MedicalRecords (
